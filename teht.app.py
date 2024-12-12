@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-# Funktio, joka tarkistaa, onko luku alkuluku
+
 def is_prime(n):
     if n <= 1:
         return False
@@ -11,7 +11,7 @@ def is_prime(n):
             return False
     return True
 
-# Flask-reitti
+
 @app.route('/alkuluku/<int:number>', methods=['GET'])
 def check_prime(number):
     result = {
@@ -20,6 +20,6 @@ def check_prime(number):
     }
     return jsonify(result)
 
-# Käynnistää palvelimen
+
 if __name__ == '__main__':
     app.run(debug=True, port=3000)
